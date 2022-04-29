@@ -1,0 +1,23 @@
+name: checkstyle
+on:
+  pull_request:
+jobs:
+  java-checkstyle:
+    name: "java checkstyle"
+    runs-on: ubuntu-latest
+      - name: "Checkout ${{ github.ref }} ( ${{ github.sha }} )"
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          submodules: recursive
+      - name: Run java checkstyle
+        uses: dbelyaev/action-checkstyle@v0.5.1
+        id: java_checkstyle
+        with:
+          checkstyle_config: checkstyle.xml
+          checkstyle_version: 9.3
+
+
+
+
+
