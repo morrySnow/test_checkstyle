@@ -21,8 +21,5 @@ jobs:
           checkstyle_version: 9.3
           reporter: 'github-pr-review'
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-
-
-
+          fail_on_error: true
 
