@@ -14,9 +14,10 @@ jobs:
       - name: Run java checkstyle
         uses: dbelyaev/action-checkstyle@master
         with:
-          checkstyle_config: "checkstyle.xml"
+          checkstyle_config: "check/checkstyle/checkstyle.xml"
           checkstyle_version: 9.3
           reporter: 'github-pr-review'
           github_token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
+          workdir: "./fe"
 
