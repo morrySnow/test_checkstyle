@@ -5,9 +5,6 @@ jobs:
   java-checkstyle:
     name: "java checkstyle new"
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
     steps:
       - name: "Checkout ${{ github.ref }} ( ${{ github.sha }} )"
         uses: actions/checkout@v2
