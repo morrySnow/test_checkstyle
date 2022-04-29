@@ -1,7 +1,6 @@
 name: checkstyle
 on:
   pull_request:
-  push:
 jobs:
   java-checkstyle:
     name: "java checkstyle"
