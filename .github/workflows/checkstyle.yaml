@@ -13,11 +13,14 @@ jobs:
           persist-credentials: false
           submodules: recursive
       - name: Run java checkstyle
-        uses: dbelyaev/action-checkstyle@v0.5.1
+        uses: nikitasavinov/checkstyle-action@0.5.1
         id: java_checkstyle
         with:
           checkstyle_config: checkstyle.xml
           checkstyle_version: 9.3
+          reporter: 'github-pr-check'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tool_name: 'testtool'
 
 
 
