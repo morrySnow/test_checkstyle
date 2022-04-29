@@ -3,7 +3,7 @@ on:
   pull_request:
 jobs:
   java-checkstyle:
-    name: "java checkstyle"
+    name: "java checkstyle new"
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout ${{ github.ref }} ( ${{ github.sha }} )"
@@ -15,7 +15,7 @@ jobs:
         uses: nikitasavinov/checkstyle-action@0.5.1
         id: java_checkstyle
         with:
-          checkstyle_config: checkstyle.xml
+          # checkstyle_config: checkstyle.xml
           checkstyle_version: 9.3
           reporter: 'github-pr-check'
           github_token: ${{ secrets.GITHUB_TOKEN }}
