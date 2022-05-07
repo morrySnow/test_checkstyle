@@ -23,6 +23,11 @@
 
     <property name="severity" value="warning"/>
 
+    <module name="Header">
+        <property name="headerFile" value="check/checkstyle/checkstyle-apache-header.txt"/>
+        <property name="fileExtensions" value="java"/>
+    </module>
+
     <property name="fileExtensions" value="java"/>
     <!-- Excludes all 'module-info.java' files              -->
     <!-- See https://checkstyle.org/config_filefilters.html -->

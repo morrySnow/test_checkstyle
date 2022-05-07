@@ -16,7 +16,7 @@ jobs:
         with:
           checkstyle_config: "check/checkstyle/checkstyle.xml"
           checkstyle_version: 9.3
-          reporter: 'github-pr-review'
+          reporter: 'github-pr-check'
           github_token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
           workdir: "./fe"
