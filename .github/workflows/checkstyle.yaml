@@ -5,19 +5,19 @@ jobs:
   java-checkstyle:
     name: "java checkstyle new"
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: "Checkout ${{ github.ref }} ( ${{ github.sha }} )"
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           submodules: recursive
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.4.0
       - name: Run java checkstyle
-        uses: dbelyaev/action-checkstyle@master
-        with:
-          checkstyle_config: "check/checkstyle/checkstyle.xml"
-          checkstyle_version: 9.3
-          reporter: 'github-pr-check'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          fail_on_error: true
-          workdir: "./fe"
+        run:
+          cd fe && mvn clean checkstyle:test
+
 
