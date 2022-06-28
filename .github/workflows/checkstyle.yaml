@@ -15,7 +15,9 @@ jobs:
           persist-credentials: false
           submodules: recursive
       - name: Setup Maven Action
-        uses: s4u/setup-maven-action@v1.4.0
+        uses: stCarolas/setup-maven@v4.4
+        with:
+          maven-version: 3.8.4
       - name: Run java checkstyle
         run:
           cd fe && mvn clean checkstyle:test
